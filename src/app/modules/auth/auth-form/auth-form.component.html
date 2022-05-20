@@ -1,0 +1,42 @@
+<img class="auth-image" src="assets/reading-man.jpg" alt="reading-man">
+
+<form
+  [formGroup]="formGroup"
+  (submit)="submit()"
+  class="auth-form"
+>
+  <mat-button-toggle-group formControlName="type" class="auth-form__toggle">
+    <mat-button-toggle value="register">Register</mat-button-toggle>
+    <mat-button-toggle value="login">Login</mat-button-toggle>
+  </mat-button-toggle-group>
+
+  <mat-form-field
+    appearance="standard"
+    class="auth-form__input"
+  >
+    <mat-label>Login</mat-label>
+    <input formControlName="login" matInput type="email">
+    <mat-error *ngIf="formGroup.controls['login']?.errors?.['email']">
+      Invalid email
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field
+    appearance="standard"
+    class="auth-form__input"
+  >
+    <mat-label>Register</mat-label>
+    <input formControlName="password" matInput type="password">
+    <mat-error *ngIf="formGroup.controls['password'].errors?.['minlength']">
+      Minimum password length must be {{ formGroup.controls['password'].errors?.['minlength'].requiredLength }} symbols
+    </mat-error>
+  </mat-form-field>
+
+  <button
+    type="submit"
+    mat-flat-button
+    color="primary"
+    [disabled]="formGroup.invalid"
+    class="auth-form__submit"
+  >Submit</button>
+</form>

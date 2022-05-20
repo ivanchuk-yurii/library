@@ -1,0 +1,15 @@
+@mixin block-size($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin icon-size($size) {
+  @include block-size($size);
+  font-size: $size;
+  line-height: $size;
+}
+
+@mixin icon-button-size($size) {
+  @include block-size($size);
+  line-height: $size;
+}
