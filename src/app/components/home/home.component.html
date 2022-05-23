@@ -1,0 +1,26 @@
+<div class="video-container">
+  <video autoplay [muted]="'muted'" class="video" id="myVideo">
+    <source src="assets/book.mp4" type="video/mp4">
+  </video>
+</div>
+
+<header class="header">
+  <h1>MyLib</h1>
+
+  <ul class="header__list">
+    <li *ngFor="let item of list">
+      <a [routerLink]="item.path" class="header__link">{{ item.label }}</a>
+    </li>
+  </ul>
+
+  <button
+    mat-button
+    class="header__account account-button"
+    (click)="openAuth()"
+  >
+    <div class="account-button__container">
+      <h2>User</h2>
+      <mat-icon class="account-button__icon">person</mat-icon>
+    </div>
+  </button>
+</header>
