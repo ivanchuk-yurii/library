@@ -14,7 +14,7 @@ import {catchError, throwError} from "rxjs";
 export class AuthFormComponent {
   public readonly formGroup = new FormGroup({
     type: new FormControl('login'),
-    login: new FormControl(null, [Validators.required, Validators.email]),
+    email: new FormControl(null, [Validators.required, Validators.email]),
     password: new FormControl(null, [Validators.required, Validators.minLength(8)])
   });
 
@@ -34,9 +34,9 @@ export class AuthFormComponent {
         }),
       )
       .subscribe(() => {
-      this.dialog.closeAll();
-      this.dialog.open(RegisterSuccessComponent);
-    });
+        this.dialog.closeAll();
+        this.dialog.open(RegisterSuccessComponent);
+      });
   }
 
 }

@@ -1,0 +1,19 @@
+<div class="book">
+  <img
+    [src]="book.imageUrl"
+    [alt]="book.title"
+    class="book__img"
+  >
+
+  <h3 class="book__title">
+    {{ book.title }}
+  </h3>
+
+  <button mat-button class="book__order">
+    Order
+  </button>
+
+  <p class="book__description">
+    {{ book.description }}
+  </p>
+</div>

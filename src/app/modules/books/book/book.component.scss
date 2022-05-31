@@ -1,0 +1,33 @@
+@import "src/styles/variables";
+
+.book {
+  padding: 12px;
+  width: fit-content;
+  display: grid;
+  grid-template-areas: 'img title order' 'img description desription';
+  border: 1px solid $primary;
+
+  gap: 12px;
+
+  &__img {
+    $size: 100px;
+    width: $size;
+    height: $size;
+    object-fit: cover;
+    grid-area: img;
+  }
+
+  &__title {
+    margin: 0;
+    grid-area: title;
+  }
+
+  &__order {
+    grid-area: order;
+  }
+
+  &__description {
+    margin: 0;
+    grid-area: description;
+  }
+}
